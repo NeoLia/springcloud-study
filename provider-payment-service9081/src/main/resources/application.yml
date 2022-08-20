@@ -1,0 +1,26 @@
+server:
+  port: 9081
+
+spring:
+  application:
+    name: provider-payment-service
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/spring_cloud_db?serverTimezone=Asia/Shanghai&useUnicode=true&characterEncoding=utf-8&useSSL=false&allowPublicKeyRetrieval=true
+    username: root
+    password: wsmjh
+
+mybatis:
+  mapper-locations: classpath:mapper/*.xml
+  type-aliases-package: org.mjh.springcloud.po
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://eurekaserver7001.com:7001/eureka/,http://eurekaserver7002.com:7002/eureka/ # 服务注册中心的URL
+    register-with-eureka: true
+    fetch-registry: true
+  instance:
+    instance-id: provider-payment-service9081
+    prefer-ip-address: true # 访问路径显示ip地址
