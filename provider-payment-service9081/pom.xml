@@ -12,11 +12,16 @@
     <artifactId>provider-payment-service9081</artifactId>
 
     <dependencies>
+        <!-- Spring Cloud Component -->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-netflix-hystrix</artifactId>
+        </dependency>
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
         </dependency>
-        <!--Spring MVC-->
+        <!--Spring Boot Component-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>

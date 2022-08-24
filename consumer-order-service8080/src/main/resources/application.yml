@@ -11,16 +11,33 @@ mybatis:
   mapper-locations: classpath:mapper/*.xml
   type-aliases-package: org.mjh.springcloud.po
 
+# eureka config
 eureka:
   client:
     register-with-eureka: true
     fetch-registry: true
   instance:
     instance-id: consumer-order-service
-    prefer-ip-address: true # 访问路径显示ip地址
+    # show ip address
+    prefer-ip-address: true
 
+# ribbon config
 ribbon:
-  # 建立连接的最大时间
-  ConnectTimeout: 5000
-  # 建立连接后读取数据的最大时间
-  ReadTimeout: 5000
+  # connection creation timeout
+  ConnectTimeout: 10000
+  # read data timeout after creating connection
+  ReadTimeout: 10000
+
+# feign config
+feign:
+  circuitbreaker:
+    enabled: true
+
+# hystrix config
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 10000

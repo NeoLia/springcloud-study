@@ -13,3 +13,5 @@ eureka:
     register-with-eureka: false # 是否注册到Eureka服务器
     service-url:
       defaultZone: http://eurekaserver7002.com:7002/eureka/ # 服务注册中心的URL
+  server:
+    enable-self-preservation: false

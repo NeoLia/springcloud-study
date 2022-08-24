@@ -13,7 +13,7 @@ import java.math.BigDecimal;
 @Setter
 @Getter
 @ToString
-public class Payment {
+public class PaymentRecord {
     private int id;
     private String paymentNo;
     private String orderNo;
